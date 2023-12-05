@@ -46,12 +46,13 @@ function App() {
     try {
       const txResponse = await contract.updateState(newValue);
       await txResponse.wait();
+      window.alert("Successfully Update the Value");
       //console.log(txResponse);
     } catch (error) {
       //console.error(error);
       window.alert("You are not whitelisted");
     }
-    window.alert("Successfully Update the Value");
+    
   };
 
   const whitelist = async (event) => {
@@ -60,11 +61,12 @@ function App() {
       const txResponse = await contract.updateWhitelist(address , true);
       await txResponse.wait();
       //console.log(txResponse);
+      window.alert("Whitelist Address added");
     } catch (error) {
       //console.error(error);
       window.alert("You are not Owner");
     }
-    window.alert("Whitelist Address added");
+    
   };
 
  
